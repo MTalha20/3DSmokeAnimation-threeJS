@@ -1,0 +1,7 @@
+Folder Details:
+
+index.html is the root directory/main of the program 
+styles.css is the css styling file
+thanosEffect.js contains the code of 3d Somke Animation
+three.js is the three js library
+smoke.png is the smoke texture

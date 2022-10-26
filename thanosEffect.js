@@ -1,23 +1,23 @@
-// (function () { var script = document.createElement('script'); script.onload = function () { var stats = new Stats(); document.body.appendChild(stats.dom); requestAnimationFrame(function loop() { stats.update(); requestAnimationFrame(loop) }); }; script.src = '//mrdoob.github.io/stats.js/build/stats.min.js'; document.head.appendChild(script); })()
+(function () { var script = document.createElement('script'); script.onload = function () { var stats = new Stats(); document.body.appendChild(stats.dom); requestAnimationFrame(function loop() { stats.update(); requestAnimationFrame(loop) }); }; script.src = '//mrdoob.github.io/stats.js/build/stats.min.js'; document.head.appendChild(script); })()
 
 
-// var times = [];
-// var fps;
+var times = [];
+var fps;
 
-// function refreshLoop() {
-//   window.requestAnimationFrame(function() {
-//     const now = performance.now();
-//     while (times.length > 0 && times[0] <= now - 1000) {
-//       times.shift();
-//     }
-//     times.push(now);
-//     fps = times.length;
-//     console.log(fps);
-//     refreshLoop();
-//   });
-// }
+function refreshLoop() {
+  window.requestAnimationFrame(function() {
+    const now = performance.now();
+    while (times.length > 0 && times[0] <= now - 1000) {
+      times.shift();
+    }
+    times.push(now);
+    fps = times.length;
+    console.log(fps);
+    refreshLoop();
+  });
+}
 
-// refreshLoop();
+refreshLoop();
 
 var scene, sceneLight, pointLight, cam, renderer, clock, portalParticles = [], smokeParticles = [];
 
